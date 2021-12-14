@@ -1,10 +1,6 @@
 import unittest
 import pandas as pd
 from pandas.testing import assert_series_equal
-import pandas.testing as pd_testing
-from pandas._testing import assert_frame_equal
-import numpy as np
-
 
 class BlackBoxTesting(unittest.TestCase):
   def test_to_numeric(self):
