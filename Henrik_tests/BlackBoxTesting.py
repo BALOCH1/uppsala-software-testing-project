@@ -9,7 +9,7 @@ Name:               Henrik Wahlström
 Latest version:     2021-12-15"""
 
 class BlackBoxTesting(unittest.TestCase):
-    """docstring fo BlackBoxTesting."""
+    """docstring fo BlackBoxTesting. """
 
     def setUp(self):
 
