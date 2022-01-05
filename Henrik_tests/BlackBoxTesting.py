@@ -6,10 +6,10 @@ from pandas.testing import assert_frame_equal
 
 """ 
 Name:               Henrik Wahlström 
-Latest version:     2021-12-15"""
+Latest version:     2022-01-05"""
 
 class BlackBoxTesting(unittest.TestCase):
-    """docstring fo BlackBoxTesting. """
+    """docstring fo BlackBoxTesting."""
 
     def setUp(self):
 
@@ -33,17 +33,20 @@ class BlackBoxTesting(unittest.TestCase):
         ##--------------count()-------------------
         """
         Brief Description: Counts the values for each column
+        Params: - axis
+                - level
+                - numeric_only
 
 
         Input Domain Testing 
-        b1 = 0
-        b2 = >0
-        b3 = invalid count
+        c1 = 0
+        c2 = >0
+        c3 = invalid count
         
-        c1          | c2         | c3
-        b1 = True   | b1 = False | b1 = False
-        b2 = False  | b2 = True  | b2 = False
-                    |            | b3 = True  
+        D1          | D2         | D3
+        c1 = True   | c1 = False | c1 = False
+        c2 = False  | c2 = True  | c2 = False
+                    |            | c3 = True  
         """
 
     #Test c1
@@ -108,14 +111,16 @@ class BlackBoxTesting(unittest.TestCase):
         ##--------------empty()-------------------
         """
         Brief Description: Checks if the dataframe or series is empty or not
+        No params
+
 
         Input Domain Testing 
-        b1 = True
-        b2 = False
+        c1 = True
+        c2 = False
         
-        c1          | c2         
-        b1 = True   | b1 = False 
-        b2 = False  | b2 = True  
+        D1          | D2         
+        c1 = True   | c1 = False 
+        c2 = False  | c2 = True  
     
         """
 
@@ -153,20 +158,27 @@ class BlackBoxTesting(unittest.TestCase):
     ##--------------loc()-------------------
         """
         Brief Description: Access specific part of dataframe or series
+        Inputs: - Single label
+                - List or array
+                - Slice object
+                - Boolean array
+                - Allignable boolean series
+                - Allignable index
+                - Callable function
 
 
         Input Domain Testing 
-        b1 = specific row/rows
-        b2 = specific column/columns
-        b3 = all columns and rows
-        b4 = invalid loc
+        c1 = specific row/rows
+        c2 = specific column/columns
+        c3 = all columns and rows
+        c4 = invalid loc
 
         
-        c1          | c2         | c3         | c4
-        b1 = True   | b1 = True | b1 = False | b1 = False
-        b2 = False  | b2 = True  | b2 = False | b2 = False
-        b3 = False  | b3 = False | b3 = True  | b3 = False
-                                                b4 = True
+        D1          | D2         | D3         | D4
+        c1 = True   | c1 = True  | c1 = False | c1 = False
+        c2 = False  | c2 = True  | c2 = False | c2 = False
+        c3 = False  | c3 = False | c3 = True  | c3 = False
+                                                c4 = True
         """
     
     # Test c1
@@ -229,19 +241,25 @@ class BlackBoxTesting(unittest.TestCase):
     ##--------------iloc()-------------------
         """
         Brief Description: Index based access specific part of dataframe or series
+        Inputs: - Integer
+                - List or array of integers
+                - Slice object with integers
+                - Boolean array
+                - Callable function
         
+
         Input Domain Testing 
-        b1 = specific row
-        b2 = specific column
-        b3 = all columns and rows
-        b4 = invalid iloc
+        c1 = specific row
+        c2 = specific column
+        c3 = all columns and rows
+        c4 = invalid iloc
 
         
-        c1          | c2         | c3         | c4
-        b1 = True   | b1 = True | b1 = False | b1 = False
-        b2 = False  | b2 = True  | b2 = False | b2 = False
-        b3 = False  | b3 = False | b3 = True  | b3 = False
-                                                b4 = True
+        D1          | D2         | D3         | D4
+        c1 = True   | c1 = True  | c1 = False | c1 = False
+        c2 = False  | c2 = True  | c2 = False | c2 = False
+        c3 = False  | c3 = False | c3 = True  | c3 = False
+                                                c4 = True
         """
     
     #Test c1 
@@ -299,17 +317,18 @@ class BlackBoxTesting(unittest.TestCase):
         ##--------------size()-------------------
         """
         Brief Description: Checks the size of the dataframe or series. 
+        No params
 
         
         Input Domain Testing 
-        b1 = 0
-        b2 = >0
-        b3 = invalid size
+        c1 = 0
+        c2 = >0
+        c3 = invalid size
         
-        c1          | c2         | c3
-        b1 = True   | b1 = False | b1 = False
-        b2 = False  | b2 = True  | b2 = False
-                    |            | b3 = True  
+        D1          | D2         | D3
+        c1 = True   | c1 = False | c1 = False
+        c2 = False  | c2 = True  | c2 = False
+                    |            | c3 = True  
         """
     
     #Test c1
@@ -444,3 +463,5 @@ if __name__ == '__main__':
     print("")
     print("----------Blackbox testing for size in pandas:------------")
     runner.run(suite5())
+
+    
