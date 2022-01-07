@@ -341,10 +341,15 @@ class TestSortValuesMethod(unittest.TestCase):
                             ignore_index=True, key=None), answer)
 
 class TestGroupByMethod(unittest.TestCase):
-    # These tests are for testing groupby, which is supposed to group the columns or rows of a dataframe 
-    # by a specified function applied to the values.   
+      
 
     '''
+        These tests are for testing groupby, which is supposed to group the columns or rows of a dataframe 
+        by a specified function applied to the values. 
+
+        DataFrame.groupby(by=None, axis=0, level=None, as_index=True, sort=True, group_keys=True, 
+                        squeeze=NoDefault.no_default, observed=False, dropna=True)
+
         These tests have no strategy behind them, only thinking about edge cases and possible problems.
     '''
 
@@ -384,10 +389,14 @@ class TestGroupByMethod(unittest.TestCase):
         pdt.assert_frame_equal(self.df2.groupby(['Animal']).sum(), answer)
 
 class TestFillNaMethod(unittest.TestCase):
-    # These tests are for testing fillna, which is supposed to fill all the null values of a dataframe 
-    # by a specified value or method.   
+      
 
     '''
+        These tests are for testing fillna, which is supposed to fill all the null values of a dataframe 
+        by a specified value or method. 
+
+        DataFrame.fillna(value=None, method=None, axis=None, inplace=False, limit=None, downcast=None)
+
         These tests have no strategy behind them, only thinking about edge cases and possible problems.
     '''
 
@@ -434,10 +443,14 @@ class TestFillNaMethod(unittest.TestCase):
         pdt.assert_frame_equal(self.df3.fillna(method='ffill', limit=2), answer)
 
 class TestQueryMethod(unittest.TestCase):
-    # These tests are for testing query, which is supposed to return the dataframe queried by a specified 
-    # column value or relationship. 
+    #  
 
     '''
+        These tests are for testing query, which is supposed to return the dataframe queried by a specified 
+        column value or relationship.
+
+        DataFrame.query(expr, inplace=False, **kwargs)
+
         These tests have no strategy behind them, only thinking about edge cases and possible problems.
     '''
 
